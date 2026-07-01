@@ -13,11 +13,7 @@ Repo : https://github.com/RomainGuillon/Talk_to_my_data
 ```
 /
 ├── README.md
-├── PLAN.md                          # Plan détaillé de travail
-├── .gitignore
 ├── requirements.txt
-├── Documents/
-│   └── Projet_DS_GenAI_TalkToMyData_Datagong.pdf   # Cahier des charges Datagong
 ├── data/
 │   └── raw/                         # CSV exporté depuis BigQuery (non commité)
 ├── notebooks/
@@ -38,11 +34,9 @@ Repo : https://github.com/RomainGuillon/Talk_to_my_data
 │       └── agent.py
 ├── models/
 │   └── model.joblib                 # Non commité
-├── reports/
-│   ├── figures/
-│   └── model_report.md
-└── tests/
-    └── golden_set.py                # 10+ questions de validation du POC
+└── reports/
+    ├── figures/
+    └── model_report.md
 ```
 
 ---

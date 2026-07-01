@@ -1,0 +1,28 @@
+# ─── Data ────────────────────────────────────────────────────────────────────
+pandas>=2.0
+numpy>=1.26
+
+# ─── Machine Learning ─────────────────────────────────────────────────────────
+scikit-learn>=1.4
+joblib>=1.3
+xgboost>=2.0          # optionnel, utilisé en étape 2 si retenu
+lightgbm>=4.3         # optionnel, utilisé en étape 2 si retenu
+
+# ─── Visualisation ────────────────────────────────────────────────────────────
+matplotlib>=3.8
+seaborn>=0.13
+
+# ─── Notebooks ────────────────────────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.0
+
+# ─── GenAI / LangChain v1 ─────────────────────────────────────────────────────
+langchain>=0.1,<0.2   # v1 obligatoire (cahier des charges Datagong)
+langchain-openai>=0.0.5,<0.2
+openai>=1.0
+
+# ─── App ──────────────────────────────────────────────────────────────────────
+streamlit>=1.32
+
+# ─── Utilitaires ──────────────────────────────────────────────────────────────
+python-dotenv>=1.0
