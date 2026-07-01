@@ -1,0 +1,56 @@
+# ─── Fichiers de travail internes (non commités) ────────────────────────────
+PLAN.md
+Documents/Projet_DS_GenAI_TalkToMyData_Datagong.pdf
+
+# ─── Données (non commitées) ───────────────────────────────────────────────
+data/raw/
+data/processed/
+
+# ─── Modèles sauvegardés ────────────────────────────────────────────────────
+models/*.joblib
+models/*.pkl
+
+# ─── Clés et secrets ────────────────────────────────────────────────────────
+.env
+*.env
+secrets/
+
+# ─── Environnements virtuels ─────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ─── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── Outputs temporaires ─────────────────────────────────────────────────────
+reports/figures/*.png
+reports/figures/*.svg
+reports/scoring_test.csv
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# (le Dockerfile est commité, pas les artefacts de build)
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDEs ────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
