@@ -24,3 +24,10 @@ RANDOM_STATE = 42  # reproductibilite
 
 # Decision metier (notebook 02, section 6) : budget de relance = 20% des clients
 K_TOP = 0.20
+
+# POC GenAI (etape 3)
+# Cle OpenAI : section [openai], cle api_key. Fichier jamais commite.
+SECRETS_PATH = ROOT_DIR / ".streamlit" / "secrets.toml"
+OPENAI_MODEL = "gpt-4o-mini"
+MAX_APPELS_OUTIL = 4           # executions de code maximales par agent et par question
+MAX_APPELS_AGENTS = 3          # appels d'agents maximaux par le superviseur et par question

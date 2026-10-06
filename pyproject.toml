@@ -1,7 +1,7 @@
 [project]
 name = "projetgenaidatagong"
 version = "0.1.0"
-description = "Add your description here"
+description = "Scoring de defaut de credit et POC GenAI Talk to my Data (projet de fin de formation Datagong)"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
@@ -10,14 +10,11 @@ dependencies = [
     "jupyter>=1.0",
     "langchain>=1,<2",
     "langchain-openai>=1,<2",
-    "lightgbm>=4.3",
     "matplotlib>=3.8",
     "numpy>=1.26,<2",
     "openai>=1.24,<2",
     "pandas>=2.0",
-    "python-dotenv>=1.0",
     "scikit-learn>=1.4",
     "seaborn>=0.13",
     "streamlit>=1.32",
-    "xgboost>=2.0",
 ]
