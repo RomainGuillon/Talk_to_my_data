@@ -24,8 +24,12 @@ Le gradient boosting fait moins bien que la regression logistique : dataset peti
 (2134 lignes de train), les modeles complexes n'ont pas assez de donnees.
 La logreg `class_weight="balanced"` est retenue au notebook 02 ; le notebook 03
 ajuste la regularisation (C=0.01 au lieu de 1 par defaut, via GridSearchCV en CV
-5 plis sur le train), ce qui reduit le sur-apprentissage et ameliore toutes les
-metriques de validation.
+5 plis sur le train). Le gain en validation croisee est faible : PR-AUC 0.539 -> 0.544,
+moins que l'ecart-type entre plis (0.028). C=0.01 est retenu, sans gain significatif.
+
+Attention a la lecture du tableau : les ecarts entre modeles (0.01 a 0.03) sont petits
+devant l'incertitude d'une PR-AUC mesuree sur 297 lignes (intervalle a 95% de la logreg
+retenue : 0.54 a 0.76, notebook 03 section 7).
 
 ## Decision : top K% et seuil
 
@@ -44,12 +48,21 @@ metriques de validation.
 - Au seuil 0.537 : precision 0.488, recall 0.518 (121 clients flagges, ~23% :
   le seuil calibre sur la validation deborde legerement du budget de 20% sur le test).
 
-L'ecart PR-AUC validation (0.655) / test (0.498) est notable : avec 297 lignes de
-validation, les estimations sont instables. La valeur test est la reference.
+L'ecart PR-AUC validation (0.655) / test (0.498) vient de la taille des echantillons,
+pas du modele (notebook 03, section 7) :
+
+- la validation ne contient que 297 clients dont 64 defauts ; les intervalles a 95%
+  (bootstrap) se recouvrent : validation 0.54 a 0.76, test 0.41 a 0.60 ;
+- ce n'est pas du sur-apprentissage : la PR-AUC du train (0.548) est inferieure a celle
+  de la validation ;
+- la validation croisee 5 plis sur le train donne 0.544, coherent avec le test.
+
+La validation a 0.655 est un tirage favorable. La valeur test est la reference.
 
 ## Enseignements du notebook 03
 
-- Tuning : gain modeste et non confirme nettement sur le test (0.488 -> 0.498).
+- Tuning : gain modeste et non confirme nettement sur le test (0.488 -> 0.498) ;
+  en validation croisee il est de +0.005, non significatif.
 - Calibration : `class_weight="balanced"` sur-estime le risque (proba moyenne 0.449
   pour un taux reel de 0.215). Une calibration sigmoid/isotonic ramene les probas au
   bon niveau (Brier 0.189 -> ~0.12) sans changer le classement. Non integree au
